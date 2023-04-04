@@ -10,6 +10,7 @@ film_ns = Namespace("movies")
 movie_schema = MovieSchema()
 movies_schema = MovieSchema(many=True)
 
+
 @film_ns.route("/")
 class FilmsView(Resource):
     def get(self):
@@ -22,6 +23,7 @@ class FilmsView(Resource):
         req_json = request.json
         movie_service.create(req_json)
         return "", 201
+
 
 @film_ns.route("/<int:fid>")
 class FilmView(Resource):

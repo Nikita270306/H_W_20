@@ -23,6 +23,7 @@ def configure_app(app):
     api.add_namespace(film_ns)
     api.add_namespace(director_ns)
 
+
 app = create_app(Config)
 
 if __name__ == "__main__":

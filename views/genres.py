@@ -7,6 +7,7 @@ genres_ns = Namespace("genres")
 genre_schema = GenreSchema()
 genres_schema = GenreSchema(many=True)
 
+
 @genres_ns.route("/")
 class GenresView(Resource):
     def get(self):

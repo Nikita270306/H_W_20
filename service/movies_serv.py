@@ -5,7 +5,7 @@ class MovieServise:
     def __init__(self, dao: MovieDao):
         self.dao = dao
 
-    def get_all(self, genres_args, director_args, year_args):
+    def get_all(self, genres_args=None, director_args=None, year_args=None):
         if director_args and genres_args:
             return list(set(self.dao.get_by_director(director_args)) & set(self.dao.get_by_genre(genres_args)))
         elif director_args:
